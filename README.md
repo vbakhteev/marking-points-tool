@@ -1,5 +1,7 @@
 # Marking points tool
 
+![Alt Text](https://media.giphy.com/media/lUSXwryh9sVx86GsNa/giphy.gif)
+
 ## How to run
 Put files into `data/` and run `python app.py`
 
