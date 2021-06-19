@@ -89,7 +89,7 @@ class App:
 
 if __name__ == '__main__':
     src_paths = list(Path('data').glob('[!.]*'))
-    dst_dir = Path('coords')
+    dst_dir = Path('result')
     dst_dir.mkdir(exist_ok=True)
 
     app = App(src_paths, dst_dir)
