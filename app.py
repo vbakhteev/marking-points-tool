@@ -67,7 +67,11 @@ class App:
         if ext in ('jpg', 'png'):
             img = cv2.imread(str(path))[:, :, ::-1].copy()
         elif ext in ('mp4', 'mkv'):
-            raise NotImplementedError('Videos are not yet implemented')
+            cap = cv2.VideoCapture(str(path))
+            ret, img = cap.read()
+            if not ret:
+                raise
+            img = img[:, :, ::-1].copy()
         else:
             raise KeyError(f'{path} is not image or video')
 
