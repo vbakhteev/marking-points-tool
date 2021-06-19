@@ -4,7 +4,7 @@ import cv2
 import tkinter as tk
 from PIL import ImageTk, Image
 
-NUM_POINTS = 6
+NUM_POINTS = 4
 
 class App:
     def __init__(self, src_paths: list, dst_dir):
@@ -31,9 +31,9 @@ class App:
         self.points += [(x, y, self.draw_point(x, y))]
 
         if len(self.points) == NUM_POINTS:
-            self.finish_image()
+            self.next_image()
 
-    def finish_image(self):
+    def next_image(self):
         self.save_points()
         self.path_pointer += 1
 
@@ -49,6 +49,7 @@ class App:
         img, self.height, self.width = self.get_image(self.path_pointer)
         self.canvas.itemconfig(self.image_on_canvas, image=img)
         self.canvas.image = img
+        self.canvas.config(width=self.width, height=self.height)
 
     def save_points(self):
         assert len(self.points) == NUM_POINTS
