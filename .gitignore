@@ -1,0 +1,5 @@
+coords/
+data/*
+!data/.gitkeep
+
+.idea
